@@ -14,10 +14,12 @@
         {% csrf_token %}
         {{form.title}}
         <input id="ss" type="submit" name="create-tasks" >
-     </form>
+     </form><br>
 
     {% for Tasks in Task%}
        <div>
+        <a href="{% url "update_task" Tasks.id %}">Update</a><br>
+        <a href="{% url "delete_task" Tasks.id %}">delete</a>
         <p>{{Tasks}}</p>
        </div>
     {% endfor %}
